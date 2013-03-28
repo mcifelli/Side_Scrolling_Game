@@ -6,18 +6,22 @@ package dtran.mcifelli.game.objects;
  *
  */
 public class Player {
-	Weapon wep;		//Current equipped weapon
-	Utility util;	//Current equipped utility
-	int health;		//Health of the player
-	int energy;		//amount of energy player contains
-	int speed;		//Speed the player can move at
-	int powerUp;	//value of power up gauge
-	Position pos;	//player's position
+	private Weapon wep;		//Current equipped weapon
+	private Utility util;	//Current equipped utility
+	private int health;		//Health of the player
+	private int energy;		//amount of energy player contains
+	private int speed;		//Speed the player can move at
+	private int powerUp;	//value of power up gauge
+	private Position pos;	//player's position
+	private Inventory inventory;
 	//Initialize Player values
 	public Player(int initX, int initY){
-		this.pos = new Position(initX, initY);	
+		this.pos = new Position(initX, initY);
+		this.inventory = new Inventory();
 		this.wep = Weapon.blade;
 		this.util = Utility.solarPanel;
+		this.inventory.addWeapon(this.wep);
+		this.inventory.addUtility(this.util);
 		this.health = 100;
 		this.energy = 100;
 		this.speed = 10;

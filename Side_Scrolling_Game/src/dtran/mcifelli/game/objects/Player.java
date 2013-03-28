@@ -15,7 +15,7 @@ public class Player {
 	Position pos;	//player's position
 	//Initialize Player values
 	public Player(int initX, int initY){
-		pos = new Position(initX, initY);	
+		this.pos = new Position(initX, initY);	
 		this.wep = Weapon.blade;
 		this.util = Utility.solarPanel;
 		this.health = 100;

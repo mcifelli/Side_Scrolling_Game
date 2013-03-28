@@ -6,6 +6,7 @@ package dtran.mcifelli.game.objects;
 public class UtilityEquip {
 	int range, fireRate;
 	public UtilityEquip(Utility util){
+		//Object values initialized for testing purposes; change later
 		if(util.equals(Utility.freezeRay)){
 			this.range = 20;
 			this.fireRate = 4;

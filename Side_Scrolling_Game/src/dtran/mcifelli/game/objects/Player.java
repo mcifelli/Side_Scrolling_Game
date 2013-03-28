@@ -59,9 +59,13 @@ public class Player {
 	public int getPowerUp(){
 		return this.powerUp;
 	}
+	//Returns the player's Inventory
+	public Inventory getInventory(){
+		return this.inventory;
+	}
 	/**
 	 * Methods for changing player values
-	 * position, weapon, utility, health, energy, speed, power up
+	 * position, weapon, utility, health, energy, speed, power up, and items in inventory
 	 */
 	
 	//Change player position
@@ -76,11 +80,11 @@ public class Player {
 	public void changeUtility(Utility newUtil){
 		this.util = newUtil;
 	}
-	//update health
+	//Update health
 	public void changeHealth(int newHealth){
 		this.health = newHealth;
 	}
-	//update energy
+	//Update energy
 	public void changeEnergy(int newEnergy){
 		this.energy = newEnergy;
 	}
@@ -91,5 +95,21 @@ public class Player {
 	//Change value of power up gauge
 	public void changePowerUp(int newPowerUp){
 		this.powerUp = newPowerUp;
+	}
+	//Remove a weapon from the player's inventory
+	public void removeWeapon(Weapon wep){
+		this.inventory.removeWeapon(wep);
+	}
+	//Remove a utility from the player's inventory
+	public void removeUtility(Utility util){
+		this.inventory.removeUtility(util);
+	}
+	//Add a weapon to the player's inventory
+	public void addWeapon(Weapon wep){
+		this.inventory.addWeapon(wep);
+	}
+	//Add a utility to the player's inventory
+	public void addUtility(Utility util){
+		this.inventory.addUtility(util);
 	}
 }

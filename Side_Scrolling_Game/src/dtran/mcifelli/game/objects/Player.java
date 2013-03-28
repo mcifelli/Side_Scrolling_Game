@@ -1,27 +1,28 @@
 package dtran.mcifelli.game.objects;
 
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
 /**
  * Object class for player(s)
  * @author dtran2
  *
  */
 public class Player {
-	private Weapon wep;		//Current equipped weapon
-	private Utility util;	//Current equipped utility
+	private Weapon weapon;		//Current equipped weapon
+	private Utility utility;	//Current equipped utility
 	private int health;		//Health of the player
 	private int energy;		//amount of energy player contains
 	private int speed;		//Speed the player can move at
 	private int powerUp;	//value of power up gauge
 	private Position pos;	//player's position
-	private Inventory inventory;
+	private List<Weapon> inventory;
+	
 	//Initialize Player values
 	public Player(int initX, int initY){
 		this.pos = new Position(initX, initY);
 		this.inventory = new Inventory();
-		this.wep = Weapon.blade;
-		this.util = Utility.solarPanel;
-		this.inventory.addWeapon(this.wep);
-		this.inventory.addUtility(this.util);
+		this.weapon = Weapon.blade;
+		this.utility = Utility.solarPanel;
 		this.health = 100;
 		this.energy = 100;
 		this.speed = 10;

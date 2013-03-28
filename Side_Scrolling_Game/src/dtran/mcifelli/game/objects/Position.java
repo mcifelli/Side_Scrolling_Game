@@ -24,6 +24,12 @@ public class Position {
 		this.x = newX;
 		this.y = newY;
 	}
+	
+	public void add(int addX, int addY) {
+		// simplifies update calls in implementing classes
+		this.x += addX;
+		this.y += addY;
+	}
 
 
 }

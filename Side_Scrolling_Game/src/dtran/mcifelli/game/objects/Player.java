@@ -1,5 +1,7 @@
 package dtran.mcifelli.game.objects;
 
+import java.util.ArrayList;
+
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 /**
@@ -10,24 +12,23 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 public class Player {
 	private Weapon weapon;		//Current equipped weapon
 	private Utility utility;	//Current equipped utility
-	private int health;		//Health of the player
-	private int energy;		//amount of energy player contains
-	private int speed;		//Speed the player can move at
-	private int powerUp;	//value of power up gauge
-	private Position pos;	//player's position
-	private List<Weapon> inventory;
+	private int health;			//Health of the player
+	private int energy;			//amount of energy player contains
+	private int speed;			//Speed the player can move at
+	private int powerUp;		//value of power up gauge
+	private Position pos;		//player's position
+	private ArrayList<Item> inventory;
 	
 	//Initialize Player values
 	public Player(int initX, int initY){
 		this.pos = new Position(initX, initY);
-		this.inventory = new Inventory();
-		this.weapon = Weapon.blade;
-		this.utility = Utility.solarPanel;
-		this.health = 100;
-		this.energy = 100;
-		this.speed = 10;
-		this.powerUp = 0;
-		
+		inventory = new ArrayList<Item>();
+		weapon = new Weapon(Weapons.blade);
+		utility = new Utility(Utilities.solarPanel);
+		health = 100;
+		energy = 100;
+		speed = 10;
+		powerUp = 0;
 	}
 	
 	/**
@@ -39,11 +40,11 @@ public class Player {
 	}
 	//Returns equipped weapon
 	public Weapon getWeapon(){
-		return this.wep;
+		return this.weapon;
 	}
 	//Returns equipped utility
 	public Utility getUtility(){
-		return this.util;
+		return this.utility;
 	}
 	//Returns current health;
 	public int getHealth(){
@@ -61,25 +62,25 @@ public class Player {
 		return this.powerUp;
 	}
 	//Returns the player's Inventory
-	public Inventory getInventory(){
+	public ArrayList<Item> getInventory(){
 		return this.inventory;
 	}
+	
 	/**
 	 * Methods for changing player values
 	 * position, weapon, utility, health, energy, speed, power up, and items in inventory
 	 */
-	
 	//Change player position
 	public void movePlayer(int newX, int newY){
 		this.pos.move(newX, newY);
 	}
 	//Switch weapons
 	public void changeWeapon(Weapon newWep){
-		this.wep = newWep;
+		this.weapon = newWep;
 	}
 	//Switch utilities
 	public void changeUtility(Utility newUtil){
-		this.util = newUtil;
+		this.utility = newUtil;
 	}
 	//Update health
 	public void changeHealth(int newHealth){
@@ -96,21 +97,5 @@ public class Player {
 	//Change value of power up gauge
 	public void changePowerUp(int newPowerUp){
 		this.powerUp = newPowerUp;
-	}
-	//Remove a weapon from the player's inventory
-	public void removeWeapon(Weapon wep){
-		this.inventory.removeWeapon(wep);
-	}
-	//Remove a utility from the player's inventory
-	public void removeUtility(Utility util){
-		this.inventory.removeUtility(util);
-	}
-	//Add a weapon to the player's inventory
-	public void addWeapon(Weapon wep){
-		this.inventory.addWeapon(wep);
-	}
-	//Add a utility to the player's inventory
-	public void addUtility(Utility util){
-		this.inventory.addUtility(util);
 	}
 }

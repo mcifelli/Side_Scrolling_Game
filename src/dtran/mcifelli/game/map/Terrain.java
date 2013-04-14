@@ -24,7 +24,24 @@ public enum Terrain {
 				return 10;//make pink for debugging purposing
 
 		}
+	}
 	
+	public double getOpacity() {
+		switch (this) {
+			case water:
+				return 0.5; // halve all light
+			case dirt:
+				return 0; 	// block all light
+			case grass:
+				return 0;	// block all light
+			case air:
+				return 1; 	// allow all light
+			case dark:
+				return 4; 	// block all light
+			default:
+				return 1;	// allow all light
+
+		}
 	}
 	
 	public String toString() {

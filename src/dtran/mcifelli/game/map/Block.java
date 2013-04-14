@@ -1,6 +1,6 @@
 package dtran.mcifelli.game.map;
 
-import dtran.mcifelli.game.objects.Position;
+import dtran.mcifelli.game.physics.Position;
 /**
  * Object for basic structure needed to build
  * a map

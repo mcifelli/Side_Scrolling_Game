@@ -12,9 +12,9 @@ public class Game {
 	
 	// CONSTRUCTOR
 	public Game() {
-		
+		setInitialMapValues();
 	}
-	
+
 	// METHODS
 	public boolean setTerrainAtLocation(int row, int col, Terrain terrain) {
 		if ((0 <= row && row < HEIGHT) && (0 <= col && col < WIDTH)) {
@@ -22,6 +22,17 @@ public class Game {
 			return true;
 		}
 		return false;
+	}
+	
+	private void setInitialMapValues() {
+		// this method will generate an initial map for the game
+		// right now this function will generate a stock level, but ultimately should be defined values in a level file
+		for (int row = 0; row < getHeight(); row ++) {
+			for (int col = 0; col < getWidth(); col++) {
+				setTerrainAtLocation(row, col, Terrain.air);
+			}
+		}
+		
 	}
 	
 	

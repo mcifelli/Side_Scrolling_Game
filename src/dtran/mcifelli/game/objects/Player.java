@@ -1,12 +1,7 @@
 package dtran.mcifelli.game.objects;
 
-import java.util.ArrayList;
-
 import dtran.mcifelli.game.physics.Point;
 import dtran.mcifelli.game.physics.Rectangle;
-
-//Unused; commented out for now
-//import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 /**
  * Object class for player(s)
